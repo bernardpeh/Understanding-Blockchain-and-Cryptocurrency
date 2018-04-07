@@ -1,14 +1,17 @@
-# What is the blockchain
+# The blockchain
 
-In simple terms, it is a chain of sequential blocks with each block containing some insert-only transaction data, like a ledger.
+In simple terms, a blockchain is a chain of sequential blocks with each block containing some insert-only transaction data, like a ledger.
 
 ![Image credit from Bitcoin.org](assets/blockchain-overview.svg)
 
 ## Features:
 
 * Decentralised: Distributed ledger, no need for centralised authority.
+
 * Peer-to-peer: All nodes know how to sync with each other intelligently.
+
 * Immutable: Cryptography ensures all transactions are unique and irreversible.
+
 * Secure: Consensus mechanism ensures a compromised node won’t affect the rest of the operation.
 
 ![Differences between centralisation, decentralisation and distributed network](assets/centralised-decentralised-distributed.png)
@@ -18,5 +21,23 @@ Systems can now share data knowing that they have not been tampered and accurate
 The future is exciting with blockchain technology.
 
 * Blockchain 1.0: Store of value (Cryptocurrency). Eg Bitcoin.
+
 * Blockchain 2.0: Store of value and Smart Contracts (Distributed Apps or DAPPS in short). Eg. Ethereum
+
 * Blockchain 3.0: Store of value, Smart Contracts and Inter-chain Operability.
+
+## Inside a Transaction
+
+![Inside a transaction](assets/inside_a_transaction.png)
+
+A simple bitcoin transaction consist of an inputs and outputs. An input consists of the hash of the previous transaction relating to the current address and its public key. The address itself is simply a hash of the public key.
+
+The output consists of the bitcoin addresses of the receiver(s). The wallet would generate another address (change address) for the output if the sender does not send all the bitcoins in one go.
+
+## Combining UTXO Addresses
+
+If you received many small transactions, you might be paying very high tx fees if you want to spend them because they occupy more space in the blocks. Think of it as easier to carry dollar notes around rather that carrying lots of coins.
+
+It is a good idea to combine all the inputs into one especially when the network traffic is low.
+
+In Bitcoin for example, you could do a "Send max" transaction to consolidate all your coins into one of your own addresses in Electrum easily.
